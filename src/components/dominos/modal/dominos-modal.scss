@@ -1,0 +1,17 @@
+.domino-select {
+  margin-bottom: 16px;
+  label {
+    display: inline-block;
+    margin-right: 10px;
+    width: 150px;
+  }
+
+  select {
+    width: 150px;
+  }
+
+  .form-error {
+    display: block;
+    margin-left: 165px;
+  }
+}

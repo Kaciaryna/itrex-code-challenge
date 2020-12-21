@@ -1,0 +1,38 @@
+<div class="modal-background"></div>
+<div class="modal-content">
+  <form name="form">
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <h3 class="modal-card-title">Domino generator</h3>
+      <button class="delete" aria-label="close" ng-click="cancel()"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="domino-select">
+        <label>Domino top</label>
+        <div class="select is-small {{form.topDots.$touched && form.topDots.$error.required ? 'is-danger': ''}}">
+          <select name="topDots" ng-model="item.topDots" ng-value="item.topDots" required="">
+            <option ng-repeat="val in dotsOptions">{{val}}</option>
+          </select>
+        </div>
+        <span class="form-error" ng-show="form.topDots.$touched && form.topDots.$error.required">Please, select domino top</span>
+      </div>
+
+      <div class="domino-select">
+        <label>Domino bottom</label>
+        <div class="select is-small {{form.topDots.$touched && form.bottomDots.$error.required ? 'is-danger': ''}}">
+          <select name="bottomDots" ng-model="item.bottomDots" required="">
+            <option ng-repeat="val in dotsOptions">{{val}}</option>
+          </select>
+        </div>
+      <span class="form-error" ng-show="form.topDots.$touched && form.bottomDots.$error.required">Please, select domino bottom</span>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <button type="submit" ng-click="add()" class="button is-primary" ng-disabled="form.bottomDots.$error.required || form.topDots.$error.required">Select</button>
+      <button type="button" ng-click="cancel()" class="button is-light">Cancel</button>
+    </footer>
+  </div>
+  </form>
+</div>
+
+

@@ -1,0 +1,249 @@
+@import './../../variables';
+
+@mixin center-dot {
+  left: 50%;
+  top: 50%;
+
+  margin-left: -$dot-size/2;
+  margin-top: -$dot-size/2;
+}
+
+@mixin top-left-dot {
+  left: $dot-padding;
+  top: $dot-padding;
+}
+
+@mixin top-right-dot {
+  right: $dot-padding;
+  top: $dot-padding;
+}
+
+@mixin bottom-left-dot {
+  left: $dot-padding;
+  bottom: $dot-padding;
+}
+
+@mixin bottom-right-dot {
+  right: $dot-padding;
+  bottom: $dot-padding;
+}
+
+@mixin center-left-dot {
+  margin-top: -$dot-size/2;
+
+  left: $dot-padding;
+  top: 50%;
+}
+
+@mixin center-right-dot {
+  margin-top: -$dot-size/2;
+
+  right: 12px;
+  top: 50%;
+}
+
+.dominos-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 24px;
+}
+
+.domino {
+  background: black;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  margin-top: 80px;
+  width: 80px;
+
+  &-header,
+  &-footer {
+    color: white;
+    height: 50%;
+    position: relative;
+    width: 100%;
+  }
+
+  &-header {
+    border-bottom: 1px solid white;
+  }
+
+  &-footer {
+    border-top: 1px solid white;
+  }
+
+  &-dot {
+    background: white;
+    border-radius: 50%;
+    height: $dot-size;
+    position: absolute;
+    width: $dot-size;
+  }
+
+  &-container-0 {
+    .domino-dot-1,
+    .domino-dot-2,
+    .domino-dot-3,
+    .domino-dot-4,
+    .domino-dot-5,
+    .domino-dot-6 {
+      display: none;
+    }
+  }
+
+  &-container-1 {
+    .domino-dot-1 {
+      @include center-dot;
+    }
+
+    .domino-dot-2,
+    .domino-dot-3,
+    .domino-dot-4,
+    .domino-dot-5,
+    .domino-dot-6 {
+      display: none;
+    }
+  }
+
+  &-container-2 {
+    .domino-dot-1 {
+      @include top-right-dot;
+    }
+
+    .domino-dot-2 {
+      @include bottom-left-dot;
+    }
+
+    .domino-dot-3,
+    .domino-dot-4,
+    .domino-dot-5,
+    .domino-dot-6 {
+      display: none;
+    }
+  }
+
+  &-container-3 {
+    .domino-dot-1 {
+      @include top-right-dot;
+    }
+
+    .domino-dot-2 {
+      @include center-dot;
+    }
+
+    .domino-dot-3 {
+      @include bottom-left-dot;
+    }
+
+    .domino-dot-4,
+    .domino-dot-5,
+    .domino-dot-6 {
+      display: none;
+    }
+  }
+
+  &-container-4 {
+    .domino-dot-1 {
+      @include top-left-dot;
+    }
+
+    .domino-dot-2 {
+      @include top-right-dot;
+    }
+
+    .domino-dot-3 {
+      @include bottom-left-dot;
+    }
+
+    .domino-dot-4 {
+      @include bottom-right-dot;
+    }
+
+    .domino-dot-5,
+    .domino-dot-6 {
+      display: none;
+    }
+  }
+
+  &-container-5 {
+    .domino-dot-1 {
+      @include top-left-dot;
+    }
+
+    .domino-dot-2 {
+      @include top-right-dot;
+    }
+
+    .domino-dot-3 {
+      @include center-dot;
+    }
+
+    .domino-dot-4 {
+      @include bottom-left-dot;
+    }
+
+    .domino-dot-5 {
+      @include bottom-right-dot;
+    }
+
+    .domino-dot-6 {
+      display: none;
+    }
+  }
+
+  &-container-6 {
+    .domino-dot-1 {
+      @include top-left-dot;
+    }
+
+    .domino-dot-2 {
+      @include top-right-dot;
+    }
+
+    .domino-dot-3 {
+      @include center-left-dot;
+    }
+
+    .domino-dot-4 {
+      @include center-right-dot;
+    }
+
+    .domino-dot-5 {
+      @include bottom-left-dot;
+    }
+
+    .domino-dot-6 {
+      @include bottom-right-dot;
+    }
+  }
+
+  &-create-button {
+    width: 300px;
+  }
+
+  &-rotate-controls {
+    display: flex;
+    justify-content: space-between;
+    padding-top: $base-margin*3;
+  }
+
+  &-range-controls {
+    display: flex;
+    flex-direction: column;
+    margin-right: $base-margin*8;
+    padding-right: $base-margin*5;
+  }
+
+  &-range-control {
+    margin-bottom: $base-margin*3;
+  }
+
+  &-item-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: $base-margin*3;
+  }
+}

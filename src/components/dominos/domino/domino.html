@@ -1,0 +1,38 @@
+<div class="domino-rotate-controls">
+  <button class="button is-link is-small" ng-click="rotateLeft()">Rotate Left</button>
+  <button class="button is-link is-small" ng-click="rotateRight()">Rotate Right</button>
+</div>
+
+<div class="domino-item-container">
+  <div class="domino-range-controls">
+    <div class="domino-range-control">
+      <label for="dominoSize">Domino Size</label>
+      <input type="range" ng-model="settings.dominoSize" min="1" max="2" step="0.1" ng-change="changeSize()" id="dominoSize">
+    </div>
+
+    <div class="domino-range-control">
+      <label for="rotateSpeed">Rotate Speed</label>
+      <input type="range" ng-model="settings.rotateSpeed" min="100" max="1000" step="10" ng-change="changeSpeed()" id="rotateSpeed">
+    </div>
+  </div>
+
+  <div class="domino" ng-style="style">
+    <div class="domino-header domino-container-{{$ctrl.dominoItem.topDots}}">
+      <span class="domino-dot domino-dot-1"></span>
+      <span class="domino-dot domino-dot-2"></span>
+      <span class="domino-dot domino-dot-3"></span>
+      <span class="domino-dot domino-dot-4"></span>
+      <span class="domino-dot domino-dot-5"></span>
+      <span class="domino-dot domino-dot-6"></span>
+    </div>
+    <div class="domino-footer domino-container-{{$ctrl.dominoItem.bottomDots}}">
+      <span class="domino-dot domino-dot-1"></span>
+      <span class="domino-dot domino-dot-2"></span>
+      <span class="domino-dot domino-dot-3"></span>
+      <span class="domino-dot domino-dot-4"></span>
+      <span class="domino-dot domino-dot-5"></span>
+      <span class="domino-dot domino-dot-6"></span>
+    </div>
+  </div>
+</div>
+

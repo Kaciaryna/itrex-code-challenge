@@ -1,0 +1,51 @@
+@import 'variables';
+
+body {
+  font-family: $font;
+  color: $primary-color;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+
+  .modal {
+    display: block;
+  }
+}
+
+.app-navigation {
+  background-color: $nav-background-color;
+  height: 100vh;
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  a {
+    color: $primary-color;
+    display: flex;
+    padding: $base-margin $base-margin*3 $base-margin $base-margin*2;
+    text-decoration: none;
+    &.active {
+      background-color: $nav-active-background-color;
+    }
+  }
+}
+
+.form-error {
+  color: $error-color;
+  margin-top: $base-margin;
+}
+
+.modal {
+  & &-card {
+    margin-top: $base-margin*4;
+  }
+}

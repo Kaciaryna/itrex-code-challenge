@@ -1,0 +1,14 @@
+<div class="dominos-section mt-3" ng-controller="DominosController">
+  <div class="columns">
+    <div class="column is-half">
+      <h1 class="title">Domino</h1>
+      <button ng-click="showModal()" class="button is-link">{{displayDomino() ? "Update" : "New"}}</button>
+
+      <domino domino-item="dominoItem" ng-if="displayDomino()"></domino>
+    </div>
+  </div>
+
+  <div class="modal" ng-if="displayModal">
+    <dominos-modal domino-item="dominoItem" on-add="addDomino(item)" on-cancel="closeModal()"></dominos-modal>
+  </div>
+</div>
