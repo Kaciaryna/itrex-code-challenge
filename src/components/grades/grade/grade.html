@@ -1,0 +1,40 @@
+<div>
+  <table class="table is-striped is-hoverable is-fullwidth">
+    <thead>
+    <tr>
+      <th class="student-name">Name</th>
+      <th class="student-gpa">GPA</th>
+      <th class="student-remove"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="student in $ctrl.grade.students">
+      <td class="student-name">{{student.name}}</td>
+      <td class="student-gpa">{{student.gpa}}</td>
+      <td class="student-remove"><a ng-click="removeStudent(student)">x</a></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <form name="gpa">
+    <table class="table is-fullwidth">
+      <tbody>
+      <tr>
+        <td class="student-name">
+          <input class="input {{gpa.studentName.$touched && gpa.studentName.$error.required ? 'is-danger': ''}}" name="studentName" type="text" ng-model="studentName" required="">
+          <span class="form-error" ng-show="gpa.studentName.$error.required && gpa.studentName.$touched">Please, add student name</span>
+        </td>
+        <td class="student-gpa">
+          <input class="input {{gpa.studentGpa.$touched && gpa.studentGpa.$error.required ? 'is-danger': ''}}" name="studentGpa" type="number" ng-model="studentGpa" min="0" max="100" required="">
+          <span class="form-error" ng-show="gpa.studentGpa.$error.required && gpa.studentGpa.$touched">Please, add student gpa</span>
+          <span class="form-error" ng-show="gpa.studentGpa.$error.min || gpa.studentGpa.$error.max">The value must be in range 0 to 100</span>
+        </td>
+        <td class="student-remove">
+          <button class="button is-primary" type="submit" ng-click="addStudent(studentName, studentGpa)" ng-disabled="gpa.studentName.$error.required || gpa.studentGpa.$error.required || gpa.studentGpa.$error.min || gpa.studentGpa.$error.max">Add</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+

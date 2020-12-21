@@ -1,0 +1,48 @@
+[
+  {
+    "id": "9d254409-6dfc-4c88-a943-ffc0d9d0006d",
+    "name": "Grade 7a",
+    "students": [
+      {
+        "id": "4be3766f-03b8-4d2d-9fc8-17dfe6c31bed",
+        "name": "Ira Patton",
+        "gpa": 4.8
+      },
+
+      {
+        "id": "f7196786-5555-4035-bcb9-5c7c3213936b",
+        "name": "Sally Black",
+        "gpa": 3.6
+      },
+
+      {
+        "id": "8e0a572d-4584-4e21-a9ba-551df5df67d1",
+        "name": "Patsy Cobb",
+        "gpa": 2.3
+      },
+
+      {
+        "id": "8b3e729f-42a0-4441-a001-c1c91f829127",
+        "name": "Ernesto Barrett",
+        "gpa": 5.0
+      }
+    ]
+  },
+  {
+    "id": "45e9df44-8c9d-4c53-926e-3f0ff93f7cee",
+    "name": "Grade 10B",
+    "students": [
+      {
+        "id": "21754494-f78f-4bfc-aca6-017544d60b97",
+        "name": "Roberto Abbott",
+        "gpa": 4.1
+      },
+
+      {
+        "id": "6076f514-a231-4b8f-ae0a-d798a7cba9e1",
+        "name": "Amy Walsh",
+        "gpa": 4.9
+      }
+    ]
+  }
+]

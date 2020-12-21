@@ -1,0 +1,53 @@
+@import './../../variables';
+
+.calculator-section {
+  .form-error {
+    display: block;
+  }
+
+  .student-name {
+    width: 60%;
+  }
+
+  .student-gpa {
+    width: 30%;
+  }
+
+  .sudent-remove {
+    width: 10%;
+  }
+}
+
+.grades-tabs {
+  height: 44px;
+  li {
+    position: relative;
+
+    button {
+      margin: 0 $base-margin*2;
+    }
+  }
+
+  .grades-tab-remove-link {
+    border: 0;
+    padding: 0;
+    position: absolute;
+    right: $base-margin;
+    top: $base-margin;
+  }
+
+  .grades-tab {
+    margin-bottom: -3px;
+    padding: $base-margin $base-margin*4;
+
+    &.active {
+      border: 1px solid $tab-border-color;
+      border-bottom: 0;
+      border-radius: 3px;
+    }
+
+    &:not(.active) {
+
+    }
+  }
+}

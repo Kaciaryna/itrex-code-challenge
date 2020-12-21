@@ -1,0 +1,31 @@
+<div class="calculator-section">
+  <div class="block mt-3 ml-5">
+    <h1 class="title">Average GPA
+      <span class="subtitle">{{averageGpa()}}</span>
+    </h1>
+
+    <div>
+      <div class="tabs">
+        <ul class="grades-tabs">
+          <li ng-repeat="grade in $ctrl.grades">
+            <a class="grades-tab" ui-sref-active="active" ui-sref="grades.grade({ gradeId: grade.id })">
+              {{grade.name}}
+            </a>
+            <a class="grades-tab-remove-link" ui-sref="grades" ng-click="removeGrade(grade)">x</a>
+          </li>
+          <li>
+            <button class="grade-button button is-outlined is-small" ng-click="showGradeModal()">+</button>
+          </li>
+        </ul>
+      </div>
+
+      <ui-view></ui-view>
+
+      <div class="modal" ng-show="displayGradeModal">
+        <grade-modal on-add="addGrade(name)" on-cancel="closeModal()"></grade-modal>
+      </div>
+    </div>
+  </div>
+</div>
+
+

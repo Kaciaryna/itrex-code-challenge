@@ -1,0 +1,16 @@
+<div class="modal-background"></div>
+<div class="modal-card">
+  <header class="modal-card-head">
+    <h3 class="modal-card-title">New Grade</h3>
+    <button class="delete" aria-label="close" ng-click="cancel()"></button>
+  </header>
+  <form name="gradeForm">
+    <section class="modal-card-body">
+      <input name="gradeName" class="input" ng-model="gradeName" type="text" placeholder="Grade Name" required="">
+      <span class="form-error" ng-show="gradeForm.gradeName.$touched && gradeForm.gradeName.$error.required">Please, add grade name</span>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-primary" type="submit" ng-click="add(gradeName)" ng-disabled="gradeForm.gradeName.$error.required || gradeForm.gradeName.$error.required">Add</button>
+    </footer>
+  </form>
+</div>
